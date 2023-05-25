@@ -7,7 +7,7 @@ export function convertJSDateToSQLDate(date: string | Date) {
 
 export async function getUsers() {
   const conn = await connect();
-  const users = await conn.query('SELECT * FROM users');
+  const users = await conn.execute('SELECT * FROM users');
   console.log(users[0]);
 }
 
@@ -72,7 +72,7 @@ export async function createUser() {
 }
 
 // connect();
-// getUsers();
-getUserById('user_2N65dHAC66svZNJRlbT6PESnt5I');
-createUser();
+getUsers();
+// getUserById('user_2N65dHAC66svZNJRlbT6PESnt5I');
+// createUser();
 // updateUserByClerkId('user_2N65dHAC66svZNJRlbT6PESnt5I', { uername: 'lois' });
