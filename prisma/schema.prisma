@@ -1,0 +1,31 @@
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model users {
+    user_id               Int          @id @default(autoincrement())
+    clerk_id              String       @db.VarChar(255)
+    username              String       @db.VarChar(255)
+    firstName             String       @db.VarChar(255)
+    lastName              String       @db.VarChar(255)
+    fullName              String       @db.VarChar(255)
+    primaryEmailAddress   String       @db.VarChar(255)
+    organization_table_id String?      @db.VarChar(255)
+    status                users_status @default(active)
+    timezone              String?      @db.VarChar(255)
+    language              String?      @db.VarChar(255)
+    lastSignInAt          DateTime     @db.DateTime(0)
+    created_at            DateTime     @db.DateTime(0)
+    updated_at            DateTime     @db.DateTime(0)
+}
+
+enum users_status {
+    active
+    inactive
+    suspended
+}

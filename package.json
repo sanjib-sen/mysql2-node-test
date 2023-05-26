@@ -17,10 +17,12 @@
     "eslint": "^8.41.0",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
+    "prisma": "4.14.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@prisma/client": "4.14.1",
     "dotenv": "^16.0.3",
     "mysql2": "^3.3.2"
   }
